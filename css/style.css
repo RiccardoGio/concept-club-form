@@ -34,6 +34,7 @@ html, body {
 body {
     overflow-x: hidden;
     background-color: var(--dark);
+    color: #2e384c;
 }
 html, body, div {
     box-sizing: border-box;
@@ -46,8 +47,9 @@ html, body, div {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     padding-top: 10vh;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 
 }
@@ -110,6 +112,11 @@ form button {
     font-size: 1.2rem;
     border: 0;
     cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+form button:hover {
+    background-color: #ebe326;
+    color: #2e384c;
 }
 form  input {
     padding: 16px 24px;
@@ -146,8 +153,7 @@ input::placeholder {
 }
 .partners .title {
     font-size: 1.4rem;
-    margin: 2rem;
-    margin-right: 3rem;
+    padding: 1rem 3rem;
 }
 .partners .logos {
     display: grid;
@@ -173,7 +179,14 @@ input::placeholder {
 }
 .download-buttons a {
     padding: 0.5em;
+    display: inline-block;
 }
+.download-buttons img {
+    box-shadow: 0 0.4rem 1rem #d2d2d2;
+    border-radius: 1rem;
+    max-height: 59px;
+}
+
 .back-link {
     width: 100%;
     text-align: center;
@@ -189,4 +202,66 @@ input::placeholder {
 }
 .barcode {
     margin: 1rem ;
+}
+
+/*------------------------------------------------------------------
+    Media Queries: Tablet
+*/
+@media screen and (max-width: 1300px) {
+    .page {
+        padding-top: 2vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .partners {
+        position: relative;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .partners .logos {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+    .partners .title {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+/*------------------------------------------------------------------
+    Media Queries: Mobile
+*/
+
+@media screen and (max-width: 756px) {
+    .page {
+        padding-top: 2vh;
+    }
+
+    .partners {
+        position: relative;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .partners .logos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+    }
+    .partners .title {
+        width: 100%;
+    }
+    form input {
+        font-size: 1rem;
+    }
+    form input::placeholder {
+        font-size: 1rem;
+    }
+
 }
